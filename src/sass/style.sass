@@ -1,0 +1,1641 @@
+@import helper/vars
+@import helper/mixin
+@import components/header
+@import components/footer
+
+.right-part,
+.photos,
+.mini-inputs,
+.password-label,
+.grey-popup-content,
+.product-info,
+.events-line,  
+.gallery-line,  
+.services-line,
+.service,
+.sponsor,
+.shop-products,
+figure .bg-orange,
+.flex-wrap,
+.slider,
+.contact-slider,
+.contact-img-line,
+.event-description,
+.product-slider-line,
+.additional-photo  
+  display: flex
+  justify-content: space-between
+
+.active-popup 
+  display: block!important
+
+.popup-bg 
+  display: none
+  position: fixed
+  z-index: 16
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  background-color: rgba(0, 0, 0, .75)
+  .service-popup 
+    width: 20vw
+    padding: 20px
+    margin: 0
+    .close 
+      width: 20px
+      height: 20px
+      border: 1px solid #fff
+      border-radius: 2px
+      &::before,
+      &::after
+        width: 15px
+        height: 1px
+        background-color: #fff
+    .service-popup-title
+      font-size: 2.8rem
+      margin: 0
+    p 
+      font-size: 1.4rem
+    img 
+      margin: 0
+
+.popup 
+  display: none
+  position: absolute
+  top: 50%
+  left: 50%
+  width: 45%
+  max-height: 80vh
+  padding: 50px 60px
+  box-sizing: border-box
+  text-align: center
+  background-color: #fff
+  transform: translate(-50%, -50%)
+  overflow-y: scroll
+  &::-webkit-scrollbar
+    width: 2px
+    height: 100%
+    background-color: #fff
+  &::-webkit-scrollbar-thumb
+    background-color: $primary
+  input,
+  textarea 
+    position: relative
+    width: 100%
+    padding: 10px
+    font-size: 2.4rem
+    color: #050505
+    box-sizing: border-box
+    border: 3px solid $second-primary
+
+.close 
+  position: absolute
+  top: 10px
+  right: 10px
+
+.close,
+.delete-product
+  width: 40px
+  height: 40px
+  border: 3px solid $second-primary
+  border-radius: 5px
+  transition: all .5s ease
+  &::before,
+  &::after
+    content: ''
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 28px
+    height: 3px
+    background-color: $second-primary
+    transition: all .5s ease
+  &::before
+    transform: translate(-50%, -50%) rotate(45deg)
+  &::after
+    transform: translate(-50%, -50%) rotate(-45deg)
+  &:hover 
+    cursor: pointer
+    background-color: $second-primary
+    &::before,
+    &::after 
+      background-color: #fff
+
+.have-account
+  text-align: left
+  a
+    font-size: 2.4rem
+    font-weight: 600
+    line-height: 3.6rem
+    color: #050505
+    text-decoration: none
+    transition: all .5s ease
+    &:hover 
+      text-decoration: underline
+  span 
+    color: #ffcd00
+
+#sing-up,
+#sing-in,
+#send-password 
+  border: 3px solid $primary
+  color: #fff
+  &:hover 
+    color: $primary
+
+.input-line
+  text-align: left
+  margin: 25px 0
+  span 
+    font-size: 2.4rem
+    font-weight: 600
+    color: #555
+
+
+
+.mini-inputs
+  margin: 25px -10px
+  label 
+    padding: 0 10px
+    box-sizing: border-box
+
+.popup-title 
+  font-size: 4.8rem
+  font-weight: 600
+  line-height: 4.8rem
+  color: $primary 
+  margin: 0
+  
+.password-label
+  flex-wrap: wrap
+
+.forgot-password-button
+  font-size: 1.8rem
+  line-height: 3.6rem
+  color: $second-primary 
+  text-decoration: none
+  &:hover 
+    text-decoration: underline
+
+.grey-popup 
+  padding: 30px 40px 60px
+  color: #fff
+  background-color: #555
+  overflow: hidden
+  .popup-title 
+    color: #fff
+  img 
+    width: 100%
+    object-fit: cover
+    margin-bottom: 10px
+
+.grey-popup-content 
+  max-height: 50vh
+  text-align: left
+  overflow-y: scroll  
+  margin: 0 -10px
+  &::-webkit-scrollbar 
+    width: 5px
+    border: 1px solid #ffc122
+  &::-webkit-scrollbar-thumb
+    background-color: #ffc122
+  div 
+    margin: 0 10px
+  p:first-child 
+    margin-top: 0
+  .close 
+    width: 30px
+    height: 30px
+
+.printer-popup-title
+  font-size: 26px
+
+.basket-popup 
+  position: relative
+  overflow-y: scroll
+  padding: 30px 25px 0
+  border: 3px solid $second-primary
+  .close 
+    top: 5px
+    right: 5px
+
+.your-order
+  display: block
+  font-size: 3rem
+  letter-spacing: 1px
+  margin-bottom: 40px
+
+.product 
+  display: flex
+  align-items: center
+  margin: 0
+  margin-bottom: 20px
+  .product-img 
+    width: 20%
+  figcaption 
+    width: 80%
+    padding-left: 10px
+    text-align: left
+    box-sizing: border-box
+  img 
+    width: 20%
+    height: 15vh
+    object-fit: cover
+    margin: 0
+
+.product-name 
+  font-weight: 400
+  font-size: 1.8rem
+  margin: 10px
+.product-description 
+  width: 50%
+  max-height: 40px
+  height: 100%
+  padding-right: 5px
+  box-sizing: border-box
+  overflow-y: scroll
+  &::-webkit-scrollbar
+    width: 3px
+    background-color: $second-primary
+  &::-webkit-scrollbar-thumb 
+    background-color: $primary
+  p 
+    font-size: 1.2rem
+    line-height: 1.8rem
+    margin: 0
+
+.product-order-info
+  display: flex
+  justify-content: flex-end
+  width: 80%
+
+.product-quantity 
+  text-align: right
+  label 
+    display: inline-block
+    width: 35%
+    vertical-align: top
+    margin: 0 5px
+  input 
+    width: 100%
+    padding: 0 5px
+    font-size: 1.2rem
+    line-height: 18px
+    color: #fff
+    text-align: center
+    background-color: transparent
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button 
+    display: none
+    -webkit-appearance: none
+    margin: 0
+  button 
+    font-size: 1.8rem
+    line-height: 1.8rem
+    width: 25%
+    padding: 0 5px
+    color: #fff
+    background-color: transparent 
+    border: 3px solid $second-primary
+    transition: all .5s ease
+    &:hover 
+      cursor: pointer
+      background-color: $second-primary
+
+.price-wrap
+  display: flex
+  justify-content: flex-end
+  margin-left: 10%
+
+.product-price
+  margin: 0
+  margin-right: 30%
+  font-size: 1.8em
+  font-weight: 400
+
+.delete-product 
+  position: relative
+  min-width: 21px
+  height: 21px
+  border: 2px solid $second-primary
+  border-radius: 2px
+  &::before,
+  &::after
+    width: 14px
+    height: 1px
+
+.all-price,
+.basket-clear
+  font-size: 1.8rem 
+  letter-spacing: 1px
+  line-height: 2.5rem
+  text-align: right
+  margin: 0
+
+.basket-clear
+  text-align: center
+  margin-bottom: 40px
+
+.sum-price 
+  margin-left: 10%
+
+.order-registration 
+  width: 60%
+  margin: 25px auto 0
+  .mini-inputs 
+    margin: 10px -10px
+  p 
+    margin: 10px 0
+  input 
+    font-size: 1.4rem
+    line-height: 1.8rem
+    padding: 5px 15px
+    color: #fff
+    background-color: transparent
+    &::-webkit-input-placeholder
+      color: #fff
+
+.pr-submit
+  display: block
+  width: 100%
+  background-color: $second-primary
+  box-sizing: border-box
+  input 
+    font-weight: 400
+    font-size: 1.8rem
+    line-height: 2.4rem
+    color: #000
+    transition: all .5s ease
+    &:hover 
+      color: #fff
+
+main,
+footer 
+  background-color: #000
+
+.bg-orange
+  background-color: $second-primary
+
+h2 
+  font-size: 6rem
+  letter-spacing: 5px
+  margin: 0
+
+.subtitle 
+  font-size: 2.4rem
+  letter-spacing: 2px
+  line-height: 3.5rem
+  color: #555
+  margin: 25px 0
+
+.section-content 
+  margin-bottom: 50px
+
+.transparent-button
+  color: $primary
+  background-color: transparent
+  &:hover
+    color: #fff
+    background-color: $primary 
+
+.title-mb 
+  margin-bottom: 25px
+
+.about-us
+  .slider-arrows
+    display: none
+
+.event
+  position: relative
+  margin: 0 15px 70px
+  box-sizing: border-box
+  img 
+    width: 100%
+    vertical-align: bottom
+  figcaption 
+    position: relative
+    padding: 15px 20px
+    border: 3px solid #000000
+    border-top: none
+    box-sizing: border-box
+  &:hover 
+    .event-button
+      opacity: 1
+  &:first-child
+    margin-left: 0
+  &:last-child
+    margin-right: 0
+
+.event-info 
+  position: absolute
+  top: 0
+  left: 0
+  padding: 10px 15px
+  width: 100%
+  box-sizing: border-box
+  font-size: 1.8rem
+  color: #fff
+  line-height: 25px
+  background-image: linear-gradient(90deg, rgba(0,37,255,0.3) 0%, transparent 100%)
+  address
+    font-style: normal
+
+h3 
+  font-size: 2.4rem 
+  letter-spacing: 2px
+  margin: 0
+
+.event-subtitle 
+  font-size: 1.6rem
+  line-height: 24px
+  color: #555 
+
+.event-button 
+  position: absolute
+  z-index: 1
+  left: -3px
+  bottom: -50px
+  width: calc(100% + 6px)
+  padding: 5px 0
+  font-size: 2.4rem
+  text-align: center
+  opacity: 0
+  transition: all .5s ease
+
+.video-bg 
+  padding: 50px 20px
+  margin: 0
+  box-sizing: border-box
+  background-color: #555
+  &::after
+    content: ''
+    display: block
+    clear: both
+  p 
+    font-size: 1.8rem
+    line-height: 2.8rem
+    letter-spacing: 1px
+    color: #fff
+    margin-top: 0
+    float: left
+    display: inline-block
+    width: 55%
+    vertical-align: top
+        
+.arrow-right-shop,
+.arrow-left-shop 
+  background-image: url(../img/arrow_orange.png)
+  &:hover 
+    background-image: url(../img/arrow_blue.png)
+
+.video-wrap
+  display: inline-block
+  float: left
+  width: 45%
+  padding-right: 60px
+  box-sizing: border-box
+
+.video-block 
+  position: relative
+  padding-top: 56.25%
+  iframe 
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+
+.gallery 
+  .slider-arrows
+    display: none
+
+.gallery-line 
+  align-items: center
+  margin: 30px -6px
+  img 
+    width: 100%
+    height: 100%
+    vertical-align: bottom
+    object-fit: cover   
+
+.small-photo 
+  .img-hover
+    height: 50%
+  .text 
+    max-height: 35%
+
+.small-photo:first-child  
+  margin-bottom: 10px
+
+
+
+.big-photo,
+.small-photo
+  position: relative
+  margin: 0 6px
+  box-sizing: border-box 
+  transition: all .5s ease
+  &:hover
+    box-shadow: -1px 10px 20px rgba(49,48,48,0.3)       
+    transform: scale(1.05)
+    .img-hover
+      opacity: 1
+
+.img-hover 
+  position: absolute
+  left: 0
+  bottom: 0
+  height: 40%
+  width: 100%
+  padding: 15px 20px
+  box-sizing: border-box
+  background-color: rgba(85, 85, 85, .4 )
+  transition: all .5s ease
+  opacity: 0
+  .text 
+    color: #fff
+    max-height: 75%
+    overflow-y: scroll
+    &::-webkit-scrollbar
+      width: 2px
+      background-color: #555
+    &::-webkit-scrollbar-thumb
+      background-color: #000
+  p 
+    font-size: 1.1rem
+    letter-spacing: 1px
+    line-height: 1.2rem
+    margin-top: 0
+  &:hover
+    .gallery img
+      transform: scale(1.05)
+
+.more 
+  position: absolute
+  left: 0
+  bottom: 0
+  padding: 0 10px
+  font-size: 2rem
+  line-height: 2rem
+  color: #fff
+  text-decoration: none
+  background-color: $primary
+  border: 3px solid $primary
+  transition: all .5s ease
+  &:hover
+    color: $primary
+    text-shadow: 0 0 10px $primary
+    background-color: transparent 
+
+.button-line 
+  width: 100%
+  text-align: center
+
+.services-line
+  justify-content: center
+  flex-wrap: wrap
+  margin: 50px -25px 0
+  
+.service,
+.service-popup 
+  align-items: center
+  flex-direction: column
+  width: 15%
+  text-align: center
+  margin: 0 25px 25px
+  padding: 0 10px 10px
+  box-sizing: border-box
+  background-color: #555
+  transition: all .5s ease
+  p 
+    font-size: 1.8rem
+    color: #fff
+  img 
+    width: 10vw
+    height: 10vw
+    object-fit: contain
+
+.service:hover
+  transform: scale(1.05)
+  box-shadow: 0 0 10px rgba(49,48,48,0.5)
+  cursor: pointer
+
+.slider-arrows-sp
+  display: none
+
+.sponsor-wrap 
+  padding: 0 5%
+  background-color: $primary
+
+.sponsor 
+  align-items: center
+  padding: 20px 0
+  margin: 50px -10px 0
+  
+.sponsor-img-wrap
+  padding: 0 10px
+  box-sizing: border-box
+  img 
+    width: 100%
+    height: 100%
+    object-fit: contain
+
+.bg-black 
+  color: #fff
+
+.shop 
+  .slider-arrows
+    display: none
+
+.shop-info 
+  display: flex
+  justify-content: flex-end
+  align-items: center
+  font-size: 3rem
+
+.basket 
+  background-color: transparent 
+  border: none
+  margin: 0 15px
+  cursor: pointer
+.search 
+  position: relative
+  width: 30%
+  margin-left: 15px
+  input 
+    width: 100%
+    padding: 15px 10px
+    border: 3px solid $second-primary
+    background-color: transparent
+    box-sizing: border-box
+    font: 2.4rem 'Open Sans', sans-serif
+    color: #fff
+    line-height: 2.5rem
+    &::-webkit-input-placeholder
+      color: #fff
+
+.search-submit 
+  display: none
+  &+label 
+    position: absolute
+    top: 50%
+    right: 22px
+    width: 22px
+    height: 22px
+    background-image: url(../img/search.png)
+    background-size: cover
+    transform: translateY(-50%)
+    &:hover
+      cursor: pointer
+  
+.shop-cabinet 
+  display: flex
+  align-items: center
+
+.shop-products 
+  flex-wrap: wrap
+  position: relative
+  padding: 30px 0
+  figure 
+    position: relative
+    width: 31%
+    padding: 15px 0
+    margin: 0
+    margin-bottom: 100px
+    box-sizing: border-box
+    border: 3px solid $second-primary
+    img 
+      width: 100%
+      height: 50vh
+      padding: 15px 0
+      object-fit: cover
+      transition: all .5s ease
+    p 
+      font-size: 1.4rem
+      line-height: 1.8rem
+      text-align: center
+      margin: 15px 20px
+  .bg-orange 
+    align-items: center
+    padding: 0
+  .product-button
+    position: absolute
+    bottom: -70px
+    left: 50%
+    font-size: 2.4rem
+    padding: 5px 35px
+    color: #fff
+    transform: translateX(-50%)
+
+.product-img-wrap
+  overflow: hidden
+
+.product-link 
+  position: absolute
+  z-index: 1
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  &:hover + .product-img-wrap img
+    transform: scale(1.1)
+
+h4 
+  font-size: 1.8rem
+  letter-spacing: 1px
+  line-height: 2.5rem
+  color: #000
+  margin: 5px 20px
+
+.price 
+  font-size: 1.8rem
+  width: 75px
+  max-height: 25px
+  text-align: center
+  background-color: #000
+
+.second-page 
+  color: #000
+  header 
+    padding: 50px 0 15px
+    background: #fff
+  .burger-menu-active
+    background-color: rgba(180, 180, 180, .9)
+  .header-line 
+    margin: 0
+    a
+      color: #000
+      &:hover 
+        text-shadow: 0 0 5px #999
+  .profile 
+    background-position: 34px 0
+  .profile-menu-active
+    background-position: 0 0
+  .sing-menu 
+    top: -10px
+    padding-top: 35px
+    background-color: $primary
+    border: 3px solid $second-primary
+    a 
+      color: $second-primary
+      &:hover 
+        color: $second-primary
+        text-shadow: 0 0 5px $second-primary
+  main, 
+  section 
+    background-color: #fff
+  .popup 
+    border: 3px solid $primary
+    &::-webkit-scrollbar-thumb
+      background-color: $second-primary
+  h2 
+    margin-bottom: 30px
+  footer 
+    background-color: #fff
+    p
+      color: #000
+  .one-event
+    figure 
+      img 
+        vertical-align: bottom
+    figcaption 
+      padding: 0
+      border: none
+  .search 
+    margin: 0
+    margin-bottom: 50px
+    input 
+      color: $primary
+      border-color: $primary 
+      &::-webkit-input-placeholder
+        color: $primary
+  .search-submit + label 
+    background-image: url(../img/search_event.png)
+
+.primary-line 
+  height: 10px
+  background-color: $primary
+  border: none
+
+.about-us-text 
+  font-size: 1.6rem
+  line-height: 2.4rem
+
+.text-description
+  padding-right: 5%
+
+.text-description,
+.slider 
+  width: 50%
+  box-sizing: border-box
+
+.slider 
+  align-items: center
+  img 
+    width: 100%
+    object-fit: cover
+
+.arrow-left-contact,
+.arrow-right-contact,
+.arrow-left-event,
+.arrow-right-event 
+  padding: 5px
+  width: 26px
+  border: 3px solid $primary
+  transition: all .5s ease
+  background-size: cover
+  img 
+    min-width: 26px
+  &:hover 
+    cursor: pointer
+    background-color: $primary
+
+.arrow-right-contact,
+.arrow-right-event
+  transform: rotate(180deg)
+
+.contact-img-line
+  overflow-x: hidden
+  margin: 1rem 20px
+  img 
+    width: 100%
+    height: 100%
+    object-fit: cover
+    flex: 1 0 100%
+
+.contact 
+  .flex-wrap
+    align-items: center
+
+.contact-information
+  width: 30%
+  font-weight: 500 
+  font-size: 1.8rem
+  line-height: 3.6rem
+  strong 
+    display: block
+    margin: 20px 0
+  address,
+  a
+    display: inline-block
+    position: relative
+    font-style: normal
+    margin-left: 70px
+    transition: all .5s ease
+    &:hover 
+      text-shadow: 0 0 5px #999
+    &::before
+      content: ''
+      position: absolute
+      top: -10px
+      background-image: url(../img/sprite.png)
+  a 
+    color: #000
+    text-decoration: none 
+
+.info-tel:before 
+  left: -50px
+  width: 26px
+  height: 40px
+  background-position: 0 -50px
+
+.info-address:before 
+  left: -52px
+  width: 31px
+  height: 40px
+  background-position: -28px -50px
+
+.contact-information .info-mail:before 
+  top: -2px
+  left: -60px
+  width: 47px
+  height: 32px
+  background-position: -61px -50px
+
+.goods-slider 
+  display: inline-block
+
+.arrow-left-contact,
+.arrow-right-contact
+  margin: auto 0
+
+.map 
+  width: 70%
+  iframe 
+    width: 100%
+    height: 340px
+    border: none
+
+.registr 
+  font-size: 1.8rem
+  font-weight: 700
+  padding: 15px 20px
+
+.registr-popup 
+  .close 
+    top: 0
+    right: 0
+    width: 25px
+    height: 25px  
+    border-radius: 0
+    border: 3px solid $primary
+    &::after,
+    &::before
+      background-color: $primary
+      
+  label 
+    display: inline-block
+  .request,
+  textarea 
+    width: 100%
+  textarea,
+  input 
+    border: 3px solid $primary
+    box-sizing: border-box
+  textarea 
+    max-height: 150px
+    &::-webkit-scrollbar
+      width: 2px
+      height: 100%
+      background-color: #fff
+    &::-webkit-scrollbar-thumb
+      background-color: $second-primary
+  .button
+    color: #fff
+    letter-spacing: 2px
+    padding: 10px 25px
+    &:hover 
+      color: $primary
+
+.registr-submit-line 
+  text-align: right
+
+.cell
+  width: 100%
+  padding: 15px 0
+  font-weight: 600
+  font-size: 1.8rem
+  line-height: 2.4rem
+  text-align: center 
+  border: 1px solid $primary
+  box-sizing: border-box
+  address 
+    font-style: normal
+
+.arrow-line 
+  display: flex
+  justify-content: center
+  div 
+    margin: 0 5%
+.balance 
+  font-size: 3rem
+  line-height: 3rem
+  letter-spacing: 2px
+
+.product-menu-line
+  align-items: center
+  margin-bottom: 50px
+
+.half 
+  width: 60%
+  .search
+    width: 60%
+    margin: 0
+  .text-description 
+    width: 100%
+    margin-bottom: 50px
+  .shop-cabinet
+    height: 100%
+
+.product-section
+  .slider 
+    width: 40%
+
+.product-order
+  display: flex
+  align-items: center
+  .score 
+    width: 15%
+    margin: 0 25px
+  input 
+    width: 100%
+    font-size: 1.8rem
+    line-height: 2.5rem
+    border: 3px solid $primary
+    text-align: center
+    box-sizing: border-box
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button 
+      display: none
+      -webkit-appearance: none
+      margin: 0
+  .button-plus,
+  .button-minus 
+    position: relative
+    padding: 0
+    width: 30px
+    height: 30px
+    &::before
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+  .button-plus:before 
+    content: '+'
+  .button-minus:before 
+    content: '-'
+  .donate-button 
+    font-size: 1.6rem
+    line-height: 2.4rem
+    padding: 0 15px
+    margin-left: 35px
+
+.product-slider-line 
+  margin: 0 20px
+
+.collage 
+  flex: 0 0 100%
+
+.collage
+  margin-bottom: 15px
+  position: relative
+  img 
+    width: 100%
+  .product-price-on-img
+    position: absolute
+    top: 0
+    right: 0
+    padding: 0 10px
+    margin: 0
+    border: 3px solid $primary
+    background-color: #fff
+    span 
+      font-size: 2.5rem 
+      line-height: 2.8rem 
+
+.additional-photo
+  margin: 0 20px
+  img 
+    width: 30%
+    padding: 0 2.5%
+    &:first-child
+      padding-left: 0
+    &:last-child
+      padding-right: 0
+  
+  .alone-img
+    width: 30vw
+
+@media screen and ( max-width: 1200px )
+  h1 
+    font-size: 8rem
+
+  .header-subtitle 
+    font-size: 4.4rem
+    margin-bottom: 40px
+
+  .popup 
+    width: 60%
+
+@media screen and ( max-width: 990px )
+  h1 
+    font-size: 6rem
+
+  .header-about 
+    margin-bottom: 35px
+
+  .header-subtitle 
+    font-size: 3.6rem
+    margin-bottom: 35px
+
+  .button 
+    padding: 15px 50px
+
+  .header-line 
+    flex-wrap: wrap
+
+  .header-menu 
+    order: 2
+    display: none
+    width: 100%
+    max-height: 70vh
+    overflow-y: scroll
+    margin: 10px 0  
+    ul 
+      flex-direction: column
+      align-items: flex-start
+      padding: 0  
+
+  .burger 
+    display: block
+
+  .profile 
+    margin: 0 15px
+
+  .burger-menu-active 
+    position: fixed
+    z-index: 15
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    padding: 3% 7.5%
+    box-sizing: border-box
+    background-color: rgba(49,48,48,0.9)
+
+  .popup 
+    width: 70%
+
+  .popup-bg .service-popup 
+    width: 30vw
+
+  .about-us 
+    .slider-arrows
+      display: flex
+  
+  .about-us,
+  .gallery
+    .slider-arrows 
+      justify-content: flex-end
+      order: 0
+      margin-bottom: 20px
+      div 
+        margin: 0
+        &:first-child
+          margin-right: 40px
+    .arrow-right,
+    .arrow-left 
+      background-image: url(../img/arrow_black.png)
+      &:hover 
+        background-image: url(../img/arrow_blue.png)
+
+  .event
+    img 
+      width: calc(45vw - 15px)
+
+  .event-button 
+    bottom: -70px
+
+  .service 
+    width: 20%
+
+  .gallery-line 
+    .small-photo-wrap:last-child 
+      display: none
+    img 
+      width: calc( 30vw - 12px )
+
+  .more 
+    font-size: 1.8rem
+    line-height: 1.8rem
+
+  .shop
+    .slider-arrows
+      display: flex
+      justify-content: flex-end
+      div 
+        margin: 0
+        &:first-child
+          margin-right: 40px
+
+  .shop-info 
+    justify-content: space-between
+    margin: 20px 0 30px
+
+  .balance 
+    order: 1
+  
+  .basket 
+    order: 0
+    margin-left: 0
+
+  .shop-products 
+    flex-wrap: nowrap
+    overflow: hidden
+    figure 
+      margin: 0 15px 70px
+      img 
+        width: calc( 30vw - 26px )
+      &:first-child
+        margin-left: 0
+      &:last-child
+        margin-right: 0
+
+  .text-description,
+  .event-img-line,
+  .half
+    width: 100%
+    margin-bottom: 20px
+
+  .one-event,
+  .about-us,
+  .product-section 
+    .flex-wrap 
+      flex-wrap: wrap
+    .slider 
+      width: 100%
+
+  .map
+    text-align: center 
+    iframe 
+      width: 90%
+
+  .alone-img 
+    width: 60vw
+    margin: 0 auto
+
+@media screen and ( max-width: 880px )
+  .search 
+    width: calc( 45vw - 15px )
+
+  .shop-products
+    figure 
+      width: 50%
+      img 
+        width: calc( 45vw - 21px )
+
+  .map
+    text-align: center 
+    iframe 
+      width: 80%
+
+@media screen and ( max-width: 768px )
+  .popup 
+    width: 80%
+    padding: 25px
+
+  .popup-bg .service-popup 
+    width: 40vw
+    overflow-y: scroll
+    img 
+      width: 50%
+      height: 100%
+
+  section 
+    padding: 37.5px 0
+
+  .header-content
+    flex-wrap: wrap
+
+  .header-about,
+  .header-slider 
+    width: 100%
+
+  .header-slider 
+    img 
+      width: 90vw
+      object-fit: cover
+
+  .header-about 
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  h2 
+    font-size: 4.8rem
+
+  .subtitle 
+    margin: 20px 0
+
+  .event
+    figcaption 
+      padding: 15px 0
+      border: none
+
+  .event-button 
+    left: 3px
+    width: calc( 100% - 6px )
+    opacity: 1
+
+  .video-wrap,
+  .video-bg p 
+    display: block
+    float: none
+    width: 100%
+    padding: 0
+
+  .video-wrap
+    margin-bottom: 30px
+
+  .gallery 
+    .slider-arrows 
+      display: flex
+
+  .gallery-line 
+    max-height: 90vh
+    margin: 30px 0
+    overflow: hidden
+    img 
+      width: 90vw 
+      height: 90vh     
+
+  .scrolled-picture:first-child 
+    margin-left: 0
+  .scrolled-picture:last-child  
+    margin-right: 0
+
+  .big-photo,
+  .small-photo 
+    max-height: 90vh
+    .img-hover
+      height: 40%
+
+  .img-hover 
+    opacity: 1
+
+  .small-photo-wrap 
+    display: flex
+
+  .slider-arrows-sp
+    display: flex
+    justify-content: flex-end
+    order: 0
+    margin: 20px
+    div 
+      margin: 0
+      &:first-child
+        margin-right: 40px
+    .arrow-right,
+    .arrow-left 
+      background-image: url(../img/arrow_orange.png)
+      &:hover 
+        background-image: url(../img/arrow_blue.png)
+
+  .sponsor 
+    margin: 0 -10px
+    img 
+      width: calc( 45vw - 10px )
+    
+  .search 
+    input 
+      font-size: 2rem
+      padding: 10px
+
+  .copy 
+    font-size: 1.8rem
+
+  .product-button 
+    font-size: 2rem
+
+  .contact  
+    .flex-wrap 
+      flex-wrap: wrap
+
+  .contact-information 
+    text-align: center
+
+  .contact-information,
+  .map 
+    width: 100%
+    iframe
+      width: 100%
+
+@media screen and ( max-width: 630px )
+  .popup 
+    width: 90%
+
+  .your-order 
+    margin-bottom: 20px
+
+  .header-about 
+    display: block
+
+  .header-subtitle 
+    margin-bottom: 30px
+
+  .header-slider 
+    display: flex
+    flex-direction: column
+
+  .slider-arrows 
+    justify-content: flex-end
+    order: 0
+    margin-bottom: 20px
+    div 
+      margin: 0
+      &:first-child
+        margin-right: 40px
+
+  .gallery-line 
+    max-height: 80vh
+    overflow: hidden
+    img 
+      width: 90vw 
+      height: 80vh     
+
+  .big-photo,
+  .small-photo 
+    max-height: 80vh
+
+  .photos 
+    order: 1
+
+  .more 
+    font-size: 1.8rem
+    line-height: 1.8rem
+
+  .search 
+    width: 60%
+
+@media screen and ( max-width: 580px )
+  header,
+  .bg-orange 
+    padding: 25px 0
+
+  section 
+    padding: 25px 0
+
+  .header-line 
+    margin-bottom: 25px
+
+  .header-content
+    padding: 25px 0
+
+  .product-info
+    flex-wrap: wrap
+
+  .product-quantity 
+    text-align: left
+
+  .product-description 
+    margin-bottom: 10px
+
+  .product-description,
+  .product-order-info 
+    width: 100%
+
+  .order-registration
+    width: 90%
+
+  .event
+    img
+      width: 90vw
+
+  .service-line 
+    margin: 0 -15px
+
+  .service 
+    font-size: 1.5rem
+    width: 30%
+    margin: 15px
+    img 
+      width: 15vw
+      height: 15vw
+
+@media screen and ( max-width: 525px )
+  .popup 
+    .mini-inputs 
+      flex-wrap: wrap 
+      margin: 25px 0
+      label 
+        width: 100%
+        padding: 0
+        
+        &:first-child
+          margin-bottom: 15px
+      
+  .popup-bg .service-popup 
+    width: 60vw
+
+  .input-line
+    margin: 15px 0
+    label 
+      span 
+        font-size: 1.8rem
+    input 
+      font-size: 1.6rem
+      padding: 5px
+    
+  .have-account a
+    font-size: 1.8rem
+
+  .popup-title 
+    font-size: 3.6rem
+
+  .forgot-password-button 
+    font-size: 1.5rem
+    line-height: 2.4rem
+
+  .shop-products
+    figure 
+      width: 100%
+      img 
+        width: calc( 90vw - 6px )
+    
+  .close 
+    width: 30px
+    height: 30px
+    &::after,
+    &::before
+      width: 20px    
+
+  .product     
+    img 
+      display: block
+      width: 60%
+      margin: 0 auto 15px
+
+  .balance 
+    font-size: 1.6rem
+    line-height: 2.5rem
+
+  .product 
+    flex-wrap: wrap
+    .product-img,
+    figcaption 
+      width: 100%
+      padding: 0
+
+  .product-quantity 
+    width: 100%
+    button 
+      width: 25%
+    label 
+      width: 30%
+
+  .order-registration 
+    .mini-inputs 
+      flex-wrap: wrap 
+      margin: 10px 0
+      label 
+        width: 100%
+        padding: 0
+        margin-bottom: 10px
+        &:last-child
+          margin: 0
+
+  .search input 
+    font-size: 1.6rem
+    padding: 5px 15px
+
+  .copy 
+    font-size: 1.2em
+
+  .event-img-line 
+    figure 
+      margin: 0
+
+  .cell 
+    font-size: 1.4rem
+    line-height: 1.8rem
+
+@media screen and ( max-width: 425px )
+  .popup-bg .service-popup 
+    width: 80vw
+
+  h1 
+    font-size: 4.8rem
+
+  .header-subtitle
+    font-size: 2.4rem
+
+  .button 
+    font-size: 1.5rem
+    padding: 10px 25px
+
+  h2 
+    font-size: 3rem
+    line-height: 3.5rem
+
+  .subtitle 
+    font-size: 1.2rem 
+    line-height: 1.6rem
+    margin: 15px 0
+
+  .transparent-button 
+    padding: 10px 15px
+
+  h3 
+    font-size: 1.5rem
+
+  .event-subtitle 
+    font-size: 1.2rem
+    line-height: 1.6rem
+
+  .service-line 
+    margin: 0 -6px
+
+  .service 
+    width: 40%
+    margin: 6px
+    img 
+      width: 25vw
+      height: 25vw
+
+  .products-button 
+    font-size: 1.4rem
+    line-height: 1.8rem
+
+  .alone-img 
+    width: 90vw
+
+  .product-order 
+    justify-content: center
+    flex-wrap: wrap
+    label 
+      display: block
+      width: 100%
+    .donate-button 
+      padding: 5px 15px
+      margin: 10px 0
