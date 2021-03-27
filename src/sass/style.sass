@@ -14,7 +14,6 @@
 .services-line,
 .service,
 .sponsor,
-.shop-products,
 figure .bg-orange,
 .flex-wrap,
 .slider,
@@ -244,10 +243,16 @@ figure .bg-orange,
     object-fit: cover
     margin: 0
 
-.product-name 
-  font-weight: 400
-  font-size: 1.8rem
-  margin: 10px
+.price 
+  margin: 0
+
+.product-name,
+.price 
+  font-weight: 600
+  font-size: 2.4rem
+  color: #fff
+  margin: 0
+  margin-bottom: 30px
 .product-description 
   width: 50%
   max-height: 40px
@@ -464,10 +469,9 @@ h3
   transition: all .5s ease
 
 .video-bg 
-  padding: 50px 20px
+  padding: 50px 0
   margin: 0
   box-sizing: border-box
-  background-color: #555
   &::after
     content: ''
     display: block
@@ -482,9 +486,42 @@ h3
     display: inline-block
     width: 55%
     vertical-align: top
-        
+
+.video-slider 
+  display: flex
+  justify-content: space-around
+  background-color: #555
+  padding: 50px 0
+  .arrow-left,
+  .arrow-right 
+    margin: auto 30px
+
+.video-slider-line
+  overflow: hidden
+  width: 100%
+  margin: 0 -15px
+
+.video-slide 
+  flex: 0 0 calc(33.33% - 30px)
+  margin: 0 15px  
+  iframe
+    max-height: 35vh
+
+.video-description 
+  font-size: 1.8rem
+  line-height: 2.7rem
+  letter-spacing: 1px
+  color: #fff
+  .orange 
+    color: $second-primary
+    text-decoration: none
+    &:hover 
+      text-decoration: underline
+
 .arrow-right-shop,
-.arrow-left-shop 
+.arrow-left-shop,
+.arrow-left-video,
+.arrow-right-video
   background-image: url(../img/arrow_orange.png)
   &:hover 
     background-image: url(../img/arrow_blue.png)
@@ -643,6 +680,73 @@ h3
 
 .bg-black 
   color: #fff
+  h2 
+    color: $second-primary
+    
+.artist-title 
+  margin-bottom: 50px
+
+.artist-slider-line 
+  overflow-x: hidden
+  margin: 0 -50px
+
+.artist 
+  flex: 0 0 calc( 33.33% - 100px )
+  margin: 0 50px
+  .artist-img-wrap
+    position: relative
+    img 
+      width: 100%
+    &::before,
+    &::after
+      content: ''
+      position: absolute
+      width: 0
+      height: 0
+      border: 50px solid #000
+      overflow: hidden
+      box-sizing: border-box
+    &::before
+      top: 0
+      left: 0
+      border-right-color: transparent
+      border-bottom-color: transparent
+    &::after 
+      right: 0
+      bottom: 0
+      border-top-color: transparent
+      border-left-color: transparent
+  h3 
+    font-size: 3rem
+    margin: 10px 0
+  .cell 
+    padding: 0
+    border: 1px solid #fff
+    margin: 0 1px 20px
+
+.artist-genre,
+.artist-info  
+  font-size: 1.4rem
+  font-weight: 300
+  letter-spacing: 1px
+  text-transform: uppercase
+  margin: 0 auto
+
+.artist-info 
+  font-size: 2rem
+  padding: 20px 10px
+  border: 1px solid #fff
+  text-transform: none 
+  max-height: 180px
+  height: 100%
+  box-sizing: border-box
+  overflow-y: scroll
+  &::-webkit-scrollbar
+    width: 2px
+    background-color: transparent
+  &::-webkit-scrollbar-thumb
+    background-color: #555
+
 
 .shop 
   .slider-arrows
@@ -694,39 +798,37 @@ h3
   align-items: center
 
 .shop-products 
-  flex-wrap: wrap
   position: relative
   padding: 30px 0
   figure 
     position: relative
-    width: 31%
-    padding: 15px 0
+    display: flex
+    justify-content: space-around
+    width: 100%
+    padding: 50px 20px
     margin: 0
-    margin-bottom: 100px
+    margin-bottom: 30px
     box-sizing: border-box
     border: 3px solid $second-primary
     img 
-      width: 100%
-      height: 50vh
-      padding: 15px 0
-      object-fit: cover
-      transition: all .5s ease
+      width: 20%
+    figcaption 
+      width: 55%
     p 
       font-size: 1.4rem
-      line-height: 1.8rem
-      text-align: center
-      margin: 15px 20px
+      letter-spacing: 1px
+      line-height: 2.5rem
+      color: #fefefe
+      margin: 15px 0
+    .flex-wrap 
+      align-items: center
   .bg-orange 
     align-items: center
     padding: 0
   .product-button
-    position: absolute
-    bottom: -70px
-    left: 50%
     font-size: 2.4rem
     padding: 5px 35px
     color: #fff
-    transform: translateX(-50%)
 
 .product-img-wrap
   overflow: hidden
@@ -747,13 +849,6 @@ h4
   line-height: 2.5rem
   color: #000
   margin: 5px 20px
-
-.price 
-  font-size: 1.8rem
-  width: 75px
-  max-height: 25px
-  text-align: center
-  background-color: #000
 
 .second-page 
   color: #000
@@ -1210,18 +1305,6 @@ h4
     order: 0
     margin-left: 0
 
-  .shop-products 
-    flex-wrap: nowrap
-    overflow: hidden
-    figure 
-      margin: 0 15px 70px
-      img 
-        width: calc( 30vw - 26px )
-      &:first-child
-        margin-left: 0
-      &:last-child
-        margin-right: 0
-
   .text-description,
   .event-img-line,
   .half
@@ -1248,12 +1331,6 @@ h4
 @media screen and ( max-width: 880px )
   .search 
     width: calc( 45vw - 15px )
-
-  .shop-products
-    figure 
-      width: 50%
-      img 
-        width: calc( 45vw - 21px )
 
   .map
     text-align: center 
@@ -1517,12 +1594,6 @@ h4
     font-size: 1.5rem
     line-height: 2.4rem
 
-  .shop-products
-    figure 
-      width: 100%
-      img 
-        width: calc( 90vw - 6px )
-    
   .close 
     width: 30px
     height: 30px
